@@ -2,6 +2,8 @@ function generateName() {
 	//var json = $.getJSON({'url': "./data/namedatabase.json", 'async': false});
 	//var database = JSON.parse(json.responseText);
 	
+	var database;
+	
 	$.ajax({
          url: "data/namedatabase.json",
          async: false,
