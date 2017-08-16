@@ -24,7 +24,6 @@ function generateName() {
 }
 
 function generate(database) {
-	//console.log(database);
 	
 	var currentPrefix = {
 		length: 2,
