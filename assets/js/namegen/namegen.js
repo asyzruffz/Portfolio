@@ -13,32 +13,16 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 
-function generateName() {
-	//var json = $.getJSON({'url': "./data/namedatabase.json", 'async': false});
-	//var database = JSON.parse(json.responseText);
-	
-	var database;
-	
-	getJSON("https://asyzruffz.github.io/Portfolio/data/namedatabase.json", function(err, data) {
-		if (err != null) {
-			alert("Something went wrong: " + err);
-		} else {
-			database = data;
-			console.log(data);
-			alert("Your query count: " + data.query.count);
-		}
-	});
-	
-	/*$.ajax({
-         url: "data/namedatabase.json",
-         async: false,
-         dataType: 'json',
-         success: function(response) {
-			database = response.items;
-		}
-	});*/
-	
-	console.log(database);
+getJSON("https://asyzruffz.github.io/Portfolio/data/namedatabase.json", function(err, data) {
+	if (err != null) {
+		alert("Something went wrong: " + err);
+	} else {
+		generateName(data);
+	}
+});
+
+function generateName(database) {
+	//console.log(database);
 	
     var res = document.getElementById("namegenresult");
 	res.innerHTML = "Success!";
