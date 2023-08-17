@@ -1,4 +1,5 @@
 # Portfolio
+[![Flutter Web](https://github.com/asyzruffz/Portfolio/actions/workflows/flutter.yml/badge.svg)](https://github.com/asyzruffz/Portfolio/actions/workflows/flutter.yml)
 
 A web page showing some of my works.
 
