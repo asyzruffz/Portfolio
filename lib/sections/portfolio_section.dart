@@ -16,7 +16,7 @@ class PortfolioSection extends StatelessWidget {
           children: [
             Align(
               alignment: AlignmentDirectional.centerStart,
-              child: SectionTitle(first: 'My ', second: 'Portfolio (WIP)'),
+              child: SectionTitle(first: 'My ', second: 'Portfolio'),
             ),
             SizedBox(height: Ruler.fullX),
           ],
