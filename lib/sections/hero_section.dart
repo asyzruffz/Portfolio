@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
+import 'package:portfolio/constants/tag.dart';
+import 'package:portfolio/widgets/background_image.dart';
 import 'package:portfolio/widgets/content_layout.dart';
 import 'package:portfolio/widgets/socials_list.dart';
 
@@ -13,8 +15,9 @@ class HeroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        SizedBox.expand(
-            child: Container(color: Colors.pink)), // TODO: Use image
+        const SizedBox.expand(
+          child: BackgroundImage(),
+        ),
         SizedBox.expand(
           child: ContentLayout(
             child: Padding(
@@ -29,17 +32,17 @@ class HeroSection extends StatelessWidget {
                   const SocialsList(color: Palette.onPrimary),
                   Expanded(flex: 2, child: Container()),
                   const Text(
-                    'Hello, I am',
+                    Tag.heroGreeting,
                     style: TextStyle(fontSize: 64, height: 1),
                   ),
                   const SizedBox(height: Ruler.miniX),
                   const Text(
-                    'Asyraf',
+                    Tag.nickname,
                     style: TextStyle(fontSize: 128, height: 1),
                   ),
                   const SizedBox(height: Ruler.miniX),
                   const Text(
-                    'Software Developer | Game Developer | Programmer',
+                    Tag.heroJobPosition,
                     style: TextStyle(fontSize: 24),
                   ),
                   const SizedBox(height: Ruler.fullX),
@@ -65,7 +68,7 @@ class DownloadResumeButton extends StatelessWidget {
     return FilledButton(
       child: const Padding(
         padding: EdgeInsets.symmetric(vertical: Ruler.miniX),
-        child: Text('Download Resume', style: TextStyle(fontSize: 18)),
+        child: Text(Tag.heroDownloadCV, style: TextStyle(fontSize: 18)),
       ),
       onPressed: () {},
     );

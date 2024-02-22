@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
+import 'package:portfolio/constants/tag.dart';
 import 'package:portfolio/widgets/content_layout.dart';
 
 class NavBar extends StatefulWidget {
@@ -51,9 +52,9 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
                 onTap: widget.onNavigateTo,
                 indicator: const UnderlineTabIndicator(),
                 tabs: const <Widget>[
-                  Tab(text: "Home"),
-                  Tab(text: "About"),
-                  Tab(text: "Resume"),
+                  Tab(text: Tag.navHome),
+                  Tab(text: Tag.navAbout),
+                  Tab(text: Tag.navResume),
                   SizedBox.shrink(),
                   SizedBox.shrink(),
                   SizedBox.shrink(),
@@ -62,7 +63,7 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
               const Expanded(
                 child: Center(
                   child: Text(
-                    'Asyraf',
+                    Tag.fullname,
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Palette.secondary),
                   ),
@@ -77,9 +78,9 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
                   SizedBox.shrink(),
                   SizedBox.shrink(),
                   SizedBox.shrink(),
-                  Tab(text: "Portfolio"),
-                  Tab(text: "Blog"),
-                  Tab(text: "Contact"),
+                  Tab(text: Tag.navPortfolio),
+                  Tab(text: Tag.navBlog),
+                  Tab(text: Tag.navContact),
                 ],
               ),
             ],
