@@ -34,17 +34,28 @@ class HeroSection extends StatelessWidget {
                   Expanded(flex: 2, child: Container()),
                   const Text(
                     Tag.heroGreeting,
-                    style: TextStyle(fontSize: 64, height: 1),
+                    style: TextStyle(
+                      fontSize: 64,
+                      height: 1,
+                      color: Palette.onPrimary,
+                    ),
                   ),
                   const SizedBox(height: Ruler.miniX),
                   const Text(
                     Tag.nickname,
-                    style: TextStyle(fontSize: 128, height: 1),
+                    style: TextStyle(
+                      fontSize: 128,
+                      height: 1,
+                      color: Palette.onPrimary,
+                    ),
                   ),
-                  const SizedBox(height: Ruler.miniX),
+                  const SizedBox(height: Ruler.fullX),
                   const Text(
                     Tag.heroJobPosition,
-                    style: TextStyle(fontSize: 24),
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Palette.onPrimary,
+                    ),
                   ),
                   const SizedBox(height: Ruler.fullX),
                   const DownloadResumeButton(),
