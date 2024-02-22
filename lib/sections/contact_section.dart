@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
+import 'package:portfolio/constants/tag.dart';
 import 'package:portfolio/widgets/content_layout.dart';
 import 'package:portfolio/widgets/socials_list.dart';
 import 'package:portfolio/widgets/topic_title.dart';
@@ -22,7 +23,7 @@ class ContactSection extends StatelessWidget {
               SizedBox(
                 width: 500,
                 child: ContactCard(
-                  title: 'Send a message',
+                  title: Tag.contactFormTitle,
                   child: MessageForm(),
                 ),
               ),
@@ -30,7 +31,7 @@ class ContactSection extends StatelessWidget {
               SizedBox(
                 width: 300,
                 child: ContactCard(
-                  title: 'Get in touch',
+                  title: Tag.contactInfoTitle,
                   child: ContactInfo(),
                 ),
               ),
@@ -81,7 +82,7 @@ class MessageForm extends StatelessWidget {
       children: <Widget>[
         const TextField(
           decoration: InputDecoration(
-            labelText: 'Name',
+            labelText: Tag.labelName,
             labelStyle: TextStyle(color: Palette.secondary),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Palette.secondary),
@@ -94,7 +95,7 @@ class MessageForm extends StatelessWidget {
         const SizedBox(height: Ruler.halfX),
         const TextField(
           decoration: InputDecoration(
-            labelText: 'Email',
+            labelText: Tag.labelEmail,
             labelStyle: TextStyle(color: Palette.secondary),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Palette.secondary),
@@ -109,7 +110,7 @@ class MessageForm extends StatelessWidget {
           minLines: 3,
           maxLines: null,
           decoration: InputDecoration(
-            labelText: 'Message',
+            labelText: Tag.labelMessage,
             alignLabelWithHint: true,
             labelStyle: TextStyle(color: Palette.secondary),
             enabledBorder: OutlineInputBorder(
@@ -130,7 +131,7 @@ class MessageForm extends StatelessWidget {
           onPressed: () {},
           child: const Padding(
             padding: EdgeInsets.symmetric(vertical: Ruler.miniX),
-            child: Text('Send Message', style: TextStyle(fontSize: 16)),
+            child: Text(Tag.contactSendBtn, style: TextStyle(fontSize: 16)),
           ),
         ),
       ],
@@ -148,23 +149,23 @@ class ContactInfo extends StatelessWidget {
       children: [
         ContactDetail(
           icon: Icons.phone_android_outlined,
-          label: 'Phone :',
-          detail: '+6013 464 2899',
+          label: Tag.labelPhone,
+          detail: Tag.phoneNumber,
         ),
         SizedBox(height: Ruler.halfX),
         ContactDetail(
           icon: Icons.home_outlined,
-          label: 'Address :',
-          detail: 'No. 59, Lorong Bukit 4\nTaman Bukit, Baling',
+          label: Tag.labelAddress,
+          detail: Tag.address2,
         ),
         SizedBox(height: Ruler.halfX),
         ContactDetail(
           icon: Icons.email_outlined,
-          label: 'Email :',
-          detail: 'm.asyraf.ibr@gmail.com',
+          label: Tag.labelEmail,
+          detail: Tag.email,
         ),
         SizedBox(height: Ruler.fullX),
-        SocialsList(),
+        SocialsList(color: Palette.primary),
       ],
     );
   }
@@ -189,14 +190,17 @@ class ContactDetail extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(top: Ruler.halfMiniX),
-          child: Icon(icon, size: Ruler.iconNormal),
+          child: Icon(icon, size: Ruler.iconNormal, color: Palette.primary),
         ),
         const SizedBox(width: Ruler.halfX),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(label, style: const TextStyle(fontSize: 16)),
-            Text(detail, style: const TextStyle(color: Palette.secondary)),
+            Text('$label :', style: const TextStyle(fontSize: 16)),
+            SelectableText(
+              detail,
+              style: const TextStyle(color: Palette.secondary),
+            ),
           ],
         )
       ],

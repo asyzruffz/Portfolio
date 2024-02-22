@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/palette.dart';
+import 'package:portfolio/constants/tag.dart';
 import 'package:portfolio/widgets/content_layout.dart';
 
 class FooterSection extends StatelessWidget {
@@ -13,7 +14,7 @@ class FooterSection extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 16),
           child: Text(
-            '© 2023 Created with Flutter by Asyraf',
+            Tag.footer,
             style: TextStyle(color: Palette.onPrimary),
           ),
         ),

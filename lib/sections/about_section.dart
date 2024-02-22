@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
+import 'package:portfolio/constants/tag.dart';
+import 'package:portfolio/helper.dart';
 import 'package:portfolio/widgets/responsive.dart';
 import 'package:portfolio/widgets/socials_list.dart';
 import 'package:portfolio/widgets/topic_title.dart';
@@ -72,20 +74,20 @@ class AboutDescription extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const TopicTitle('Who am I ?'),
+        const TopicTitle(Tag.aboutWhoami),
         const SizedBox(height: Ruler.fullX),
         const Text(
-          'A Web Designer / Developer Located In Our Lovely Earth',
+          Tag.aboutRole,
           style: TextStyle(fontSize: 20),
         ),
         const SizedBox(height: Ruler.halfX),
         const Text(
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit.sit amet, Qui deserunt consequatur fugit repellendusillo voluptas?',
+          Tag.aboutIntroduction,
           style: TextStyle(fontSize: 14, color: Palette.secondary),
         ),
         const SizedBox(height: Ruler.fullX),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () => Helper.goUrl(Tag.cvFile),
           style: ButtonStyle(
             side: MaterialStateProperty.all<BorderSide?>(
               const BorderSide(color: Palette.primary),
@@ -93,7 +95,7 @@ class AboutDescription extends StatelessWidget {
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(vertical: Ruler.miniX),
-            child: Text('Download My CV'),
+            child: Text(Tag.aboutDownloadCV),
           ),
         ),
       ],
@@ -109,20 +111,17 @@ class AboutInfo extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        TopicTitle('Personal Info'),
+        TopicTitle(Tag.aboutPersonalInfo),
         SizedBox(height: Ruler.fullX),
-        PersonalInfo(label: 'Full Name ', data: 'Muhammad Asyraf bin Ibrahim'),
+        PersonalInfo(label: Tag.labelFullname, data: Tag.fullname),
         SizedBox(height: Ruler.miniX),
-        PersonalInfo(label: 'Birthdate ', data: '09/10/1992'),
+        PersonalInfo(label: Tag.labelBirthdate, data: Tag.dateOfBirth),
         SizedBox(height: Ruler.miniX),
-        PersonalInfo(label: 'Email ', data: 'm.asyraf.ibr@gmail.com'),
+        PersonalInfo(label: Tag.labelEmail, data: Tag.email),
         SizedBox(height: Ruler.miniX),
-        PersonalInfo(label: 'Phone ', data: '+6013 464 2899'),
+        PersonalInfo(label: Tag.labelPhone, data: Tag.phoneNumber),
         SizedBox(height: Ruler.miniX),
-        PersonalInfo(
-            label: 'Address ',
-            data:
-                'No. 59, Lorong Bukit 4, Taman Bukit,\n  09100 Baling, Kedah, Malaysia'),
+        PersonalInfo(label: Tag.labelAddress, data: Tag.address),
         SizedBox(height: Ruler.fullX),
         SocialsList(color: Palette.primary),
       ],
@@ -138,22 +137,22 @@ class AboutExpertise extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        TopicTitle('My Expertise'),
+        TopicTitle(Tag.aboutMyExpertise),
         SizedBox(height: Ruler.fullX),
         ExpertiseItem(
           icon: Icons.ac_unit,
-          label: 'Programming',
-          description: 'exercitat Repellendus, corrupt.',
+          label: Tag.aboutExpertise1,
+          description: Tag.aboutExpertiseDesc1,
         ),
         ExpertiseItem(
           icon: Icons.ac_unit,
-          label: 'System Design',
-          description: 'Lorem ipsum dolor sit consectetur.',
+          label: Tag.aboutExpertise2,
+          description: Tag.aboutExpertiseDesc2,
         ),
         ExpertiseItem(
           icon: Icons.ac_unit,
-          label: 'Programming',
-          description: 'voluptate commodi illo voluptatib.',
+          label: Tag.aboutExpertise3,
+          description: Tag.aboutExpertiseDesc3,
         ),
       ],
     );
@@ -174,12 +173,12 @@ class PersonalInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Text>[
+      children: <Widget>[
         Text(
-          label,
+          '$label ',
           style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
         ),
-        Text(
+        SelectableText(
           ': $data',
           style: const TextStyle(fontSize: 14, color: Palette.secondary),
         ),
