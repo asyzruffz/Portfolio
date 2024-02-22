@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants/ruler.dart';
+import 'package:portfolio/constants/tag.dart';
+import 'package:portfolio/helper.dart';
 
 class SocialsList extends StatelessWidget {
   final Color? color;
@@ -14,16 +17,28 @@ class SocialsList extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.facebook, size: Ruler.iconNormal, color: color),
+          onPressed: () => Helper.goUrl(Tag.linkedinLink),
+          icon: FaIcon(
+            FontAwesomeIcons.linkedin,
+            size: Ruler.iconNormal,
+            color: color,
+          ),
         ),
         IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.mail, size: Ruler.iconNormal, color: color),
+          onPressed: () => Helper.goUrl(Tag.githubLink),
+          icon: FaIcon(
+            FontAwesomeIcons.github,
+            size: Ruler.iconNormal,
+            color: color,
+          ),
         ),
         IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.code, size: Ruler.iconNormal, color: color),
+          onPressed: () => Helper.goUrl(Tag.emailLink),
+          icon: Icon(
+            Icons.mail,
+            size: Ruler.iconNormal,
+            color: color,
+          ),
         ),
       ],
     );

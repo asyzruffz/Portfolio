@@ -15,4 +15,10 @@ class Tag {
   static const String heroDownloadCV = 'Download Resume';
 
   static const String backgroundImage = 'images/background.png';
+  static const String cvFile = 'public/CV by Asyraf.pdf';
+
+  static const String githubLink = 'https://github.com/asyzruffz/';
+  static const String linkedinLink =
+      'https://www.linkedin.com/in/muhammad-asyraf-bin-ibrahim/';
+  static const String emailLink = 'mailto:m.asyraf.ibr@gmail.com';
 }

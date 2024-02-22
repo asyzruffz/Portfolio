@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
 import 'package:portfolio/constants/tag.dart';
+import 'package:portfolio/helper.dart';
 import 'package:portfolio/widgets/background_image.dart';
 import 'package:portfolio/widgets/content_layout.dart';
 import 'package:portfolio/widgets/socials_list.dart';
@@ -70,7 +71,7 @@ class DownloadResumeButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: Ruler.miniX),
         child: Text(Tag.heroDownloadCV, style: TextStyle(fontSize: 18)),
       ),
-      onPressed: () {},
+      onPressed: () => Helper.goUrl(Tag.cvFile),
     );
   }
 }
