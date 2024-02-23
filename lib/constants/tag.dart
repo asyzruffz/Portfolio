@@ -41,18 +41,19 @@ class Tag {
   static const String aboutRole =
       'A Programmer operating as Software / Game Developer';
   static const String aboutIntroduction =
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit.sit amet, Qui deserunt consequatur fugit repellendusillo voluptas?';
+      'Experienced in game development, I\'m passionate in programming software and games. I\'m an open-minded person, flexible and able to receive constructive criticism. A person adaptable to new environment and able to learn new things quickly.';
   static const String aboutDownloadCV = 'Download My CV';
   static const String aboutPersonalInfo = 'Personal Info';
   static const String aboutMyExpertise = 'My Expertise';
   static const String aboutExpertise1 = 'Programming';
-  static const String aboutExpertiseDesc1 = 'exercitat Repellendus, corrupt.';
+  static const String aboutExpertiseDesc1 =
+      'Creating, optimizing, and maintaining codes using a few programming languages.';
   static const String aboutExpertise2 = 'System Design';
   static const String aboutExpertiseDesc2 =
-      'Lorem ipsum dolor sit consectetur.';
+      'Planning and organizing the overall structure, architecture, and components of a game system, defining the goals, scope, specifications, and requirements of the system.';
   static const String aboutExpertise3 = 'Debugging';
   static const String aboutExpertiseDesc3 =
-      'voluptate commodi illo voluptatib.';
+      'Finding and fixing the errors, defects, and glitches that affect the functionality, performance, and quality of a software.';
 
   static const String contactFormTitle = 'Send a message';
   static const String contactInfoTitle = 'Get in touch';

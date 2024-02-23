@@ -50,7 +50,7 @@ class AboutContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 450,
+      height: 500,
       child: Container(
         padding: const EdgeInsets.all(Ruler.doubleX),
         decoration: const BoxDecoration(
@@ -140,17 +140,17 @@ class AboutExpertise extends StatelessWidget {
         TopicTitle(Tag.aboutMyExpertise),
         SizedBox(height: Ruler.fullX),
         ExpertiseItem(
-          icon: Icons.ac_unit,
+          icon: Icons.code,
           label: Tag.aboutExpertise1,
           description: Tag.aboutExpertiseDesc1,
         ),
         ExpertiseItem(
-          icon: Icons.ac_unit,
+          icon: Icons.conveyor_belt,
           label: Tag.aboutExpertise2,
           description: Tag.aboutExpertiseDesc2,
         ),
         ExpertiseItem(
-          icon: Icons.ac_unit,
+          icon: Icons.bug_report,
           label: Tag.aboutExpertise3,
           description: Tag.aboutExpertiseDesc3,
         ),
@@ -209,22 +209,24 @@ class ExpertiseItem extends StatelessWidget {
           child: Icon(icon, size: Ruler.iconNormal, color: Palette.primary),
         ),
         const SizedBox(width: Ruler.halfX),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              label,
-              style: const TextStyle(fontSize: 20),
-            ),
-            Text(
-              description,
-              style: const TextStyle(fontSize: 14, color: Palette.secondary),
-            ),
-            const SizedBox(
-              width: 300,
-              child: Divider(thickness: 0.5, color: Palette.secondary),
-            ),
-          ],
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                label,
+                style: const TextStyle(fontSize: 20),
+              ),
+              Text(
+                description,
+                style: const TextStyle(fontSize: 14, color: Palette.secondary),
+              ),
+              const SizedBox(
+                width: 300,
+                child: Divider(thickness: 0.5, color: Palette.secondary),
+              ),
+            ],
+          ),
         )
       ],
     );
