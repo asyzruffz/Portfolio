@@ -338,7 +338,10 @@ class ResumeAttributeCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(name, style: const TextStyle(fontSize: 14));
+    return Text(
+      name,
+      style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    );
   }
 }
 
