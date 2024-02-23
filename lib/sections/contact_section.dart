@@ -128,7 +128,7 @@ class MessageForm extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
             ),
           ),
-          onPressed: () {},
+          onPressed: () => _messageError(context),
           child: const Padding(
             padding: EdgeInsets.symmetric(vertical: Ruler.miniX),
             child: Text(Tag.contactSendBtn, style: TextStyle(fontSize: 16)),
@@ -136,6 +136,14 @@ class MessageForm extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void _messageError(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      content: Text('Error! Message not sent.'),
+      backgroundColor: Colors.red,
+      duration: Durations.long1,
+    ));
   }
 }
 
