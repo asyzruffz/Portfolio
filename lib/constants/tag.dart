@@ -10,6 +10,7 @@ class Tag {
       'No. 59, Lorong Bukit 4\nTaman Bukit\n09100 Baling, Kedah';
 
   static const String backgroundImage = 'images/background.png';
+  static const String blogImage = 'images/blog_banner.jpg';
   static const String cvFile = 'public/CV by Asyraf.pdf';
 
   static const String navHome = 'Home';
@@ -30,6 +31,7 @@ class Tag {
   static const String labelEducation = 'Education';
   static const String labelSkills = 'Skills';
   static const String labelLanguages = 'Languages';
+  static const String labelReadMore = 'Read more';
 
   static const String githubLink = 'https://github.com/asyzruffz/';
   static const String linkedinLink =
@@ -121,6 +123,11 @@ class Tag {
   static const double resumeLangScore1 = 1.0;
   static const String resumeLanguage2 = 'English';
   static const double resumeLangScore2 = 0.95;
+
+  static const String blogTitle1 = 'Hello, world!';
+  static const String blogDate1 = '10/02/2024';
+  static const String blogSummary1 =
+      'Welcome to my personal website! This is my first blog post, and I\'m very excited to share it with you.\nI\'ve always wanted to have my own website, where I can showcase my skills, projects, and interests. I think having a personal website is a great way to express yourself, connect with others, and learn new things.\nIt took me a while to complete this website, but I\'m very proud of the result. I learned a lot along the way, happy to experiment with the usage of dart and Flutter. There are still a lot of quirks and issues that I need to handle.\nI hope you enjoy browsing my website, and feel free to leave me a comment or contact me. I\'d love to hear from you!\nThank you for reading, and stay tuned for more updates!';
 
   static const String contactFormTitle = 'Send a message';
   static const String contactInfoTitle = 'Get in touch';
