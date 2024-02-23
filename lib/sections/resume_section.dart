@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
+import 'package:portfolio/constants/tag.dart';
 import 'package:portfolio/widgets/content_layout.dart';
 import 'package:portfolio/widgets/responsive.dart';
 import 'package:portfolio/widgets/section_title.dart';
@@ -35,55 +36,55 @@ class ResumeSection extends StatelessWidget {
 class ResumeDetails extends StatelessWidget {
   final List<Widget> experienceCard = const [
     ResumeCardContent(
-      timePeriod: '2017 - Present',
-      title: 'UX Developer',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!',
+      timePeriod: Tag.resumeExpTime1,
+      title: Tag.resumeExpRole1,
+      description: Tag.resumeExpDesc1,
     ),
     ResumeCardContent(
-      timePeriod: '2016 - 2017',
-      title: 'Front-end Developer',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!',
+      timePeriod: Tag.resumeExpTime2,
+      title: Tag.resumeExpRole2,
+      description: Tag.resumeExpDesc2,
     ),
     ResumeCardContent(
-      timePeriod: '2015 - 2016',
-      title: 'UX Designer',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!',
+      timePeriod: Tag.resumeExpTime3,
+      title: Tag.resumeExpRole3,
+      description: Tag.resumeExpDesc3,
     ),
   ];
 
   final List<Widget> educationCard = const [
     ResumeCardContent(
-      timePeriod: '2017 - Present',
-      title: 'B.E Computer Engineering',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!',
+      timePeriod: Tag.resumeEduTime1,
+      title: Tag.resumeEduLevel1,
+      description: Tag.resumeEduDesc1,
     ),
     ResumeCardContent(
-      timePeriod: '2016 - 2017',
-      title: 'Diploma in Computer Engineering',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!',
+      timePeriod: Tag.resumeEduTime2,
+      title: Tag.resumeEduLevel2,
+      description: Tag.resumeEduDesc2,
     ),
     ResumeCardContent(
-      timePeriod: '2015 - 2016',
-      title: 'High School Degree',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!',
+      timePeriod: Tag.resumeEduTime3,
+      title: Tag.resumeEduLevel3,
+      description: Tag.resumeEduDesc3,
     ),
   ];
 
   final List<Widget> skillCard = const [
-    ResumeCardAttribute(label: 'HTML5 & CSS3', value: 0.9),
-    ResumeCardAttribute(label: 'Javascript', value: 0.8),
-    ResumeCardAttribute(label: 'PHP', value: 0.6),
+    ResumeCardAttribute(label: Tag.resumeSkill1, value: Tag.resumeSkillScore1),
+    ResumeCardAttribute(label: Tag.resumeSkill2, value: Tag.resumeSkillScore2),
+    ResumeCardAttribute(label: Tag.resumeSkill3, value: Tag.resumeSkillScore3),
   ];
 
   final List<Widget> languageCard = const [
-    ResumeCardAttribute(label: 'Malay', value: 1),
-    ResumeCardAttribute(label: 'English', value: 0.95),
+    ResumeCardAttribute(
+      label: Tag.resumeLanguage1,
+      value: Tag.resumeLangScore1,
+    ),
+    ResumeCardAttribute(
+      label: Tag.resumeLanguage2,
+      value: Tag.resumeLangScore2,
+    ),
   ];
 
   const ResumeDetails({
@@ -272,7 +273,10 @@ class ResumeCardContent extends StatelessWidget {
         const SizedBox(height: Ruler.miniX),
         Text(
           title,
-          style: const TextStyle(color: Palette.secondary),
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            //color: Palette.secondary,
+          ),
         ),
         const SizedBox(height: Ruler.miniX),
         Text(
