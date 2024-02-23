@@ -71,9 +71,19 @@ class ResumeDetails extends StatelessWidget {
   ];
 
   final List<Widget> skillCard = const [
+    ResumeAttributeCategory(name: Tag.resumeSkillCat1),
     ResumeCardAttribute(label: Tag.resumeSkill1, value: Tag.resumeSkillScore1),
     ResumeCardAttribute(label: Tag.resumeSkill2, value: Tag.resumeSkillScore2),
     ResumeCardAttribute(label: Tag.resumeSkill3, value: Tag.resumeSkillScore3),
+    ResumeAttributeCategory(name: Tag.resumeSkillCat2),
+    ResumeCardAttribute(label: Tag.resumeSkill4, value: Tag.resumeSkillScore4),
+    ResumeCardAttribute(label: Tag.resumeSkill5, value: Tag.resumeSkillScore5),
+    ResumeAttributeCategory(name: Tag.resumeSkillCat3),
+    ResumeCardAttribute(label: Tag.resumeSkill6, value: Tag.resumeSkillScore6),
+    ResumeCardAttribute(label: Tag.resumeSkill7, value: Tag.resumeSkillScore7),
+    ResumeAttributeCategory(name: Tag.resumeSkillCat4),
+    ResumeCardAttribute(label: Tag.resumeSkill8, value: Tag.resumeSkillScore8),
+    ResumeCardAttribute(label: Tag.resumeSkill9, value: Tag.resumeSkillScore9),
   ];
 
   final List<Widget> languageCard = const [
@@ -99,17 +109,9 @@ class ResumeDetails extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: ResumeCard(
-              title: 'Experiences',
+              title: Tag.labelExperiences,
               divider: const Divider(color: Palette.secondary),
               children: experienceCard,
-            ),
-          ),
-          const SizedBox(width: Ruler.fullX),
-          Expanded(
-            child: ResumeCard(
-              title: 'Education',
-              divider: const Divider(color: Palette.secondary),
-              children: educationCard,
             ),
           ),
           const SizedBox(width: Ruler.fullX),
@@ -118,15 +120,23 @@ class ResumeDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ResumeCard(
-                  title: 'Skills',
-                  children: skillCard,
+                  title: Tag.labelEducation,
+                  divider: const Divider(color: Palette.secondary),
+                  children: educationCard,
                 ),
                 const SizedBox(height: Ruler.fullX),
                 ResumeCard(
-                  title: 'Languages',
+                  title: Tag.labelLanguages,
                   children: languageCard,
                 ),
               ],
+            ),
+          ),
+          const SizedBox(width: Ruler.fullX),
+          Expanded(
+            child: ResumeCard(
+              title: Tag.labelSkills,
+              children: skillCard,
             ),
           ),
         ],
@@ -135,24 +145,24 @@ class ResumeDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ResumeCard(
-            title: 'Experiences',
+            title: Tag.labelExperiences,
             divider: const Divider(color: Palette.secondary),
             children: experienceCard,
           ),
           const SizedBox(height: Ruler.fullX),
           ResumeCard(
-            title: 'Education',
+            title: Tag.labelEducation,
             divider: const Divider(color: Palette.secondary),
             children: educationCard,
           ),
           const SizedBox(height: Ruler.fullX),
           ResumeCard(
-            title: 'Skills',
+            title: Tag.labelSkills,
             children: skillCard,
           ),
           const SizedBox(height: Ruler.fullX),
           ResumeCard(
-            title: 'Languages',
+            title: Tag.labelLanguages,
             children: languageCard,
           ),
         ],
@@ -315,6 +325,20 @@ class ResumeCardAttribute extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class ResumeAttributeCategory extends StatelessWidget {
+  final String name;
+
+  const ResumeAttributeCategory({
+    super.key,
+    required this.name,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(name, style: const TextStyle(fontSize: 14));
   }
 }
 

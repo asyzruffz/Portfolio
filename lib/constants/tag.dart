@@ -26,6 +26,10 @@ class Tag {
   static const String labelPhone = 'Phone';
   static const String labelAddress = 'Address';
   static const String labelMessage = 'Message';
+  static const String labelExperiences = 'Experiences';
+  static const String labelEducation = 'Education';
+  static const String labelSkills = 'Skills';
+  static const String labelLanguages = 'Languages';
 
   static const String githubLink = 'https://github.com/asyzruffz/';
   static const String linkedinLink =
@@ -90,12 +94,28 @@ class Tag {
   static const String resumeEduDesc3 =
       'ATAR: 96.50\nKBU International College, Petaling Jaya';
 
-  static const String resumeSkill1 = 'Object-oriented: C++, C#, Java';
-  static const double resumeSkillScore1 = 1.0;
-  static const String resumeSkill2 = 'Game engine: Unity, Unreal Engine';
+  static const String resumeSkillCat1 = 'Object-oriented:';
+  static const String resumeSkill1 = 'C++';
+  static const double resumeSkillScore1 = 0.95;
+  static const String resumeSkill2 = 'C#';
   static const double resumeSkillScore2 = 1.0;
-  static const String resumeSkill3 = 'Scripting: Javascript, Lua';
-  static const double resumeSkillScore3 = 1.0;
+  static const String resumeSkill3 = 'Java';
+  static const double resumeSkillScore3 = 0.8;
+  static const String resumeSkillCat2 = 'Game engine:';
+  static const String resumeSkill4 = 'Unity';
+  static const double resumeSkillScore4 = 0.95;
+  static const String resumeSkill5 = 'Unreal Engine';
+  static const double resumeSkillScore5 = 0.85;
+  static const String resumeSkillCat3 = 'Scripting:';
+  static const String resumeSkill6 = 'Javascript';
+  static const double resumeSkillScore6 = 0.8;
+  static const String resumeSkill7 = 'Lua';
+  static const double resumeSkillScore7 = 0.75;
+  static const String resumeSkillCat4 = 'Misc:';
+  static const String resumeSkill8 = 'Graphics programming';
+  static const double resumeSkillScore8 = 0.6;
+  static const String resumeSkill9 = 'Web development';
+  static const double resumeSkillScore9 = 0.75;
 
   static const String resumeLanguage1 = 'Malay';
   static const double resumeLangScore1 = 1.0;
