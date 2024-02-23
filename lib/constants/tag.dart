@@ -36,6 +36,7 @@ class Tag {
   static const String githubLink = 'https://github.com/asyzruffz/';
   static const String linkedinLink =
       'https://www.linkedin.com/in/muhammad-asyraf-bin-ibrahim/';
+  static const String mastodonLink = 'https://mastodon.gamedev.place/@ruffz';
   static const String emailLink = 'mailto:m.asyraf.ibr@gmail.com';
 
   static const String heroGreeting = 'Hello, I am';

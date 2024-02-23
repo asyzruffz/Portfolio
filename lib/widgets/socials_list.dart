@@ -14,7 +14,8 @@ class SocialsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Wrap(
+      spacing: Ruler.miniX,
       children: [
         IconButton(
           onPressed: () => Helper.goUrl(Tag.linkedinLink),
@@ -28,6 +29,14 @@ class SocialsList extends StatelessWidget {
           onPressed: () => Helper.goUrl(Tag.githubLink),
           icon: FaIcon(
             FontAwesomeIcons.github,
+            size: Ruler.iconNormal,
+            color: color,
+          ),
+        ),
+        IconButton(
+          onPressed: () => Helper.goUrl(Tag.mastodonLink),
+          icon: FaIcon(
+            FontAwesomeIcons.mastodon,
             size: Ruler.iconNormal,
             color: color,
           ),

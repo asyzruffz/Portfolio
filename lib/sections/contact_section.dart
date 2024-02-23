@@ -16,26 +16,29 @@ class ContactSection extends StatelessWidget {
       child: const ContentLayout(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: Ruler.doubleX),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(
-                width: 500,
-                child: ContactCard(
-                  title: Tag.contactFormTitle,
-                  child: MessageForm(),
+          child: Center(
+            child: Wrap(
+              spacing: Ruler.fullX,
+              runSpacing: Ruler.fullX,
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.start,
+              children: <Widget>[
+                SizedBox(
+                  width: 500,
+                  child: ContactCard(
+                    title: Tag.contactFormTitle,
+                    child: MessageForm(),
+                  ),
                 ),
-              ),
-              SizedBox(width: Ruler.fullX),
-              SizedBox(
-                width: 300,
-                child: ContactCard(
-                  title: Tag.contactInfoTitle,
-                  child: ContactInfo(),
+                SizedBox(
+                  width: 300,
+                  child: ContactCard(
+                    title: Tag.contactInfoTitle,
+                    child: ContactInfo(),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

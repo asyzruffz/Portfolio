@@ -13,19 +13,22 @@ class AboutSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Responsive(
-      desktop: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
-            child: AboutContainer(child: AboutDescription()),
-          ),
-          Expanded(
-            child: AboutContainer(child: AboutInfo()),
-          ),
-          Expanded(
-            child: AboutContainer(child: AboutExpertise()),
-          ),
-        ],
+      desktop: IntrinsicHeight(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Expanded(
+              child: AboutContainer(child: AboutDescription()),
+            ),
+            Expanded(
+              child: AboutContainer(child: AboutInfo()),
+            ),
+            Expanded(
+              child: AboutContainer(child: AboutExpertise()),
+            ),
+          ],
+        ),
       ),
       mobile: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -49,19 +52,16 @@ class AboutContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 500,
-      child: Container(
-        padding: const EdgeInsets.all(Ruler.doubleX),
-        decoration: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(color: Palette.secondary),
-            left: BorderSide(color: Palette.secondary, width: 0.5),
-            right: BorderSide(color: Palette.secondary, width: 0.5),
-          ),
+    return Container(
+      padding: const EdgeInsets.all(Ruler.doubleX),
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(color: Palette.secondary),
+          left: BorderSide(color: Palette.secondary, width: 0.5),
+          right: BorderSide(color: Palette.secondary, width: 0.5),
         ),
-        child: child,
       ),
+      child: child,
     );
   }
 }
@@ -178,9 +178,11 @@ class PersonalInfo extends StatelessWidget {
           '$label ',
           style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
         ),
-        SelectableText(
-          ': $data',
-          style: const TextStyle(fontSize: 14, color: Palette.secondary),
+        Expanded(
+          child: SelectableText(
+            ': $data',
+            style: const TextStyle(fontSize: 14, color: Palette.secondary),
+          ),
         ),
       ],
     );
@@ -211,7 +213,7 @@ class ExpertiseItem extends StatelessWidget {
         const SizedBox(width: Ruler.halfX),
         Expanded(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Text(
                 label,
@@ -221,8 +223,8 @@ class ExpertiseItem extends StatelessWidget {
                 description,
                 style: const TextStyle(fontSize: 14, color: Palette.secondary),
               ),
-              const SizedBox(
-                width: 300,
+              const Padding(
+                padding: EdgeInsets.only(right: Ruler.doubleX),
                 child: Divider(thickness: 0.5, color: Palette.secondary),
               ),
             ],

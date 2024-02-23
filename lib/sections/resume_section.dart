@@ -285,7 +285,6 @@ class ResumeCardContent extends StatelessWidget {
           title,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            //color: Palette.secondary,
           ),
         ),
         const SizedBox(height: Ruler.miniX),
