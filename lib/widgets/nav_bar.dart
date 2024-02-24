@@ -3,6 +3,7 @@ import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
 import 'package:portfolio/constants/tag.dart';
 import 'package:portfolio/widgets/content_layout.dart';
+import 'package:portfolio/widgets/split_tab_bar.dart';
 
 class NavBar extends StatefulWidget {
   final Function(int)? onNavigateTo;
@@ -42,47 +43,23 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
         width: double.infinity,
         height: Ruler.navbarHeight,
         child: ContentLayout(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              TabBar(
-                controller: _tabController,
-                isScrollable: true,
-                onTap: widget.onNavigateTo,
-                indicator: const UnderlineTabIndicator(),
-                tabs: const <Widget>[
-                  Tab(text: Tag.navHome),
-                  Tab(text: Tag.navAbout),
-                  Tab(text: Tag.navResume),
-                  SizedBox.shrink(),
-                  SizedBox.shrink(),
-                  SizedBox.shrink(),
-                ],
+          child: SplitTabBar(
+            controller: _tabController,
+            onTap: widget.onNavigateTo,
+            middle: const Center(
+              child: Text(
+                Tag.fullname,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Palette.secondary),
               ),
-              const Expanded(
-                child: Center(
-                  child: Text(
-                    Tag.fullname,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Palette.secondary),
-                  ),
-                ),
-              ),
-              TabBar(
-                controller: _tabController,
-                isScrollable: true,
-                onTap: widget.onNavigateTo,
-                indicator: const UnderlineTabIndicator(),
-                tabs: const <Widget>[
-                  SizedBox.shrink(),
-                  SizedBox.shrink(),
-                  SizedBox.shrink(),
-                  Tab(text: Tag.navPortfolio),
-                  Tab(text: Tag.navBlog),
-                  Tab(text: Tag.navContact),
-                ],
-              ),
+            ),
+            tabLabels: const <String>[
+              Tag.navHome,
+              Tag.navAbout,
+              Tag.navResume,
+              Tag.navPortfolio,
+              Tag.navBlog,
+              Tag.navContact,
             ],
           ),
         ),

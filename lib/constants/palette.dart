@@ -8,11 +8,14 @@ class Palette {
   static const Color background = Colors.white;
   static const Color dark = Color(0xFF343a40);
   static const Color onPrimary = Colors.white;
+  static const Color onSurface = Colors.black;
 
   static const Color disabled = Colors.black12;
 
   static const ColorScheme colorScheme = ColorScheme.light(
     primary: primary,
     secondary: secondary,
+    onPrimary: onPrimary,
+    onSurface: onSurface,
   );
 }
