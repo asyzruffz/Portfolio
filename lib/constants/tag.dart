@@ -83,42 +83,55 @@ class Tag {
   static const String resumeEduLevel1 =
       'Bachelor of Computer Science (Hons) with Specialization in Game Development';
   static const String resumeEduDesc1 =
-      'CGPA: 3.89\nMultimedia University, Cyberjaya';
+      'Multimedia University, Cyberjaya\nCGPA: 3.89';
 
   static const String resumeEduTime2 = '2012 - 2014';
   static const String resumeEduLevel2 =
       'Bachelor (B.Eng.) in Mechatronics/Precision Technology';
   static const String resumeEduDesc2 =
-      'Dropout\nTechnische Hochschule Nürnberg, Nuremberg, Germany';
+      'Technische Hochschule Nürnberg, Nuremberg, Germany\nDropout';
 
   static const String resumeEduTime3 = '2010 - 2011';
   static const String resumeEduLevel3 =
       'Australian Matriculation Programme (AUSMAT)';
   static const String resumeEduDesc3 =
-      'ATAR: 96.50\nKBU International College, Petaling Jaya';
+      'KBU International College, Petaling Jaya\nATAR: 96.50';
 
-  static const String resumeSkillCat1 = 'Object-oriented:';
-  static const String resumeSkill1 = 'C++';
-  static const double resumeSkillScore1 = 0.95;
-  static const String resumeSkill2 = 'C#';
-  static const double resumeSkillScore2 = 1.0;
-  static const String resumeSkill3 = 'Java';
-  static const double resumeSkillScore3 = 0.8;
-  static const String resumeSkillCat2 = 'Game engine:';
-  static const String resumeSkill4 = 'Unity';
-  static const double resumeSkillScore4 = 0.95;
-  static const String resumeSkill5 = 'Unreal Engine';
-  static const double resumeSkillScore5 = 0.85;
-  static const String resumeSkillCat3 = 'Scripting:';
-  static const String resumeSkill6 = 'Javascript';
-  static const double resumeSkillScore6 = 0.8;
-  static const String resumeSkill7 = 'Lua';
-  static const double resumeSkillScore7 = 0.75;
-  static const String resumeSkillCat4 = 'Misc:';
-  static const String resumeSkill8 = 'Graphics programming';
-  static const double resumeSkillScore8 = 0.6;
-  static const String resumeSkill9 = 'Web development';
-  static const double resumeSkillScore9 = 0.75;
+  static const List<SkillCategory> resumeStats = [
+    SkillCategory(
+      category: 'Programming language:',
+      skills: [
+        SkillData(label: 'C++', value: 0.95),
+        SkillData(label: 'C#', value: 1.0),
+        SkillData(label: 'Dart', value: 0.9),
+        SkillData(label: 'Javascript', value: 0.8),
+        SkillData(label: 'Lua', value: 0.75),
+        SkillData(label: 'Rust', value: 0.5),
+      ],
+    ),
+    SkillCategory(
+      category: 'Discipline:',
+      skills: [
+        SkillData(label: 'Game development', value: 1.0),
+        SkillData(label: 'Mobile development', value: 0.85),
+        SkillData(label: 'Web development', value: 0.75),
+        SkillData(label: 'Graphics programming', value: 0.6),
+      ],
+    ),
+    SkillCategory(
+      category: 'Game engine:',
+      skills: [
+        SkillData(label: 'Unity', value: 0.95),
+        SkillData(label: 'Unreal Engine', value: 0.85),
+      ],
+    ),
+    SkillCategory(
+      category: 'Framework:',
+      skills: [
+        SkillData(label: 'Flutter', value: 0.8),
+      ],
+    ),
+  ];
 
   static const String resumeLanguage1 = 'Malay';
   static const double resumeLangScore1 = 1.0;
@@ -135,4 +148,18 @@ class Tag {
   static const String contactSendBtn = 'Send Message';
 
   static const String footer = '© 2024 Created with Flutter by Asyraf';
+}
+
+class SkillCategory {
+  final String category;
+  final List<SkillData> skills;
+
+  const SkillCategory({required this.category, required this.skills});
+}
+
+class SkillData {
+  final String label;
+  final double value;
+
+  const SkillData({required this.label, required this.value});
 }

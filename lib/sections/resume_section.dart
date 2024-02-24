@@ -70,22 +70,6 @@ class ResumeDetails extends StatelessWidget {
     ),
   ];
 
-  final List<Widget> skillCard = const [
-    ResumeAttributeCategory(name: Tag.resumeSkillCat1),
-    ResumeCardAttribute(label: Tag.resumeSkill1, value: Tag.resumeSkillScore1),
-    ResumeCardAttribute(label: Tag.resumeSkill2, value: Tag.resumeSkillScore2),
-    ResumeCardAttribute(label: Tag.resumeSkill3, value: Tag.resumeSkillScore3),
-    ResumeAttributeCategory(name: Tag.resumeSkillCat2),
-    ResumeCardAttribute(label: Tag.resumeSkill4, value: Tag.resumeSkillScore4),
-    ResumeCardAttribute(label: Tag.resumeSkill5, value: Tag.resumeSkillScore5),
-    ResumeAttributeCategory(name: Tag.resumeSkillCat3),
-    ResumeCardAttribute(label: Tag.resumeSkill6, value: Tag.resumeSkillScore6),
-    ResumeCardAttribute(label: Tag.resumeSkill7, value: Tag.resumeSkillScore7),
-    ResumeAttributeCategory(name: Tag.resumeSkillCat4),
-    ResumeCardAttribute(label: Tag.resumeSkill8, value: Tag.resumeSkillScore8),
-    ResumeCardAttribute(label: Tag.resumeSkill9, value: Tag.resumeSkillScore9),
-  ];
-
   final List<Widget> languageCard = const [
     ResumeCardAttribute(
       label: Tag.resumeLanguage1,
@@ -103,6 +87,17 @@ class ResumeDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> skillCard = [];
+    for (int i = 0; i < Tag.resumeStats.length; i++) {
+      skillCard.add(ResumeAttributeCategory(name: Tag.resumeStats[i].category));
+      for (int j = 0; j < Tag.resumeStats[i].skills.length; j++) {
+        skillCard.add(ResumeCardAttribute(
+          label: Tag.resumeStats[i].skills[j].label,
+          value: Tag.resumeStats[i].skills[j].value,
+        ));
+      }
+    }
+
     return Responsive(
       desktop: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -316,7 +311,6 @@ class ResumeCardAttribute extends StatelessWidget {
           label,
           style: const TextStyle(color: Palette.secondary, fontSize: 14),
         ),
-        const SizedBox(height: Ruler.halfMiniX),
         LinearProgressIndicator(
           value: value,
           semanticsLabel: label,
@@ -337,9 +331,12 @@ class ResumeAttributeCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      name,
-      style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    return Padding(
+      padding: const EdgeInsets.only(top: Ruler.halfMiniX),
+      child: Text(
+        name,
+        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }
