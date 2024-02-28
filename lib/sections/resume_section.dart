@@ -3,6 +3,7 @@ import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
 import 'package:portfolio/constants/tag.dart';
 import 'package:portfolio/widgets/content_layout.dart';
+import 'package:portfolio/widgets/padded_card.dart';
 import 'package:portfolio/widgets/responsive.dart';
 import 'package:portfolio/widgets/section_title.dart';
 import 'package:portfolio/widgets/topic_title.dart';
@@ -220,9 +221,7 @@ class ResumeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(Ruler.threeQuarterX),
-      decoration: BoxDecoration(border: Border.all(color: Palette.secondary)),
+    return PaddedCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
