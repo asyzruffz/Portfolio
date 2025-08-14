@@ -11,7 +11,7 @@ class Tag {
 
   static const String backgroundImage = 'images/background.png';
   static const String blogImage = 'images/blog_banner.jpg';
-  static const String cvFile = 'public/CV by Asyraf.pdf';
+  static const String cvFile = 'public/CV_by_Asyraf.pdf';
 
   static const String navHome = 'Home';
   static const String navAbout = 'About';
