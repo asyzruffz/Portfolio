@@ -23,7 +23,7 @@ environment:
 # consider running `flutter pub upgrade --major-versions`. To see which dependencies
 # have newer versions available, run `flutter pub outdated`.
 dependencies:
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.1.1
   flutter:
     sdk: flutter
 
@@ -35,7 +35,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.1
+  flutter_lints: ^6.0.0
 
 # The following section is specific to Flutter packages.
 flutter:
