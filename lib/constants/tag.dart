@@ -138,6 +138,25 @@ class Tag {
   static const String resumeLanguage2 = 'English';
   static const double resumeLangScore2 = 0.95;
 
+  static const String projImage1 = 'images/project_BiO-X.png';
+  static const String projImage2 = 'images/project_procedural.png';
+  static const String projImage3 = 'images/project_observr.png';
+  static const String projImage4 = 'images/project_claustro.png';
+  static const String projImage5 = 'images/project_stomp.png';
+  static const String projImage6 = 'images/project_fowlcard.png';
+  static const String projImage7 = 'images/project_seeyouagain.png';
+  static const String projImage8 = 'images/project_findout.png';
+  static const String projImage9 = 'images/project_oath.png';
+  static const String projImage10 = 'images/project_trapped.png';
+  static const String projImage11 = 'images/project_tetronihome.png';
+  static const String projImage12 = 'images/project_wherechannel.png';
+  static const String projImage13 = 'images/project_lostfrequency.jpg';
+  static const String projImage14 = 'images/project_hexacute.png';
+  static const String projImage15 = 'images/project_bickerfight.png';
+  static const String projImage16 = 'images/project_eterium.png';
+  static const String projImage17 = 'images/project_ejenescape.png';
+  static const String projImage18 = 'images/project_lightson.png';
+
   static const String blogTitle1 = 'Hello, world!';
   static const String blogDate1 = '10/02/2024';
   static const String blogSummary1 =
