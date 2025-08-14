@@ -89,7 +89,7 @@ class AboutDescription extends StatelessWidget {
         OutlinedButton(
           onPressed: () => Helper.goUrl(Tag.cvFile),
           style: ButtonStyle(
-            side: MaterialStateProperty.all<BorderSide?>(
+            side: WidgetStateProperty.all<BorderSide?>(
               const BorderSide(color: Palette.primary),
             ),
           ),

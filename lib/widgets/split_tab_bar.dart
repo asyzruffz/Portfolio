@@ -39,6 +39,7 @@ class _SplitTabBarState extends State<SplitTabBar> {
         Expanded(child: widget.middle != null ? widget.middle! : Container()),
         for (int i = halfTabCount; i < widget.tabLabels.length; i++)
           _SplitTab(
+            key: ValueKey(i),
             index: i,
             label: widget.tabLabels[i],
             onPressed: () => _select(i),
@@ -75,7 +76,7 @@ class _SplitTab extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: ButtonStyle(
-        shape: MaterialStateProperty.all<OutlinedBorder?>(
+        shape: WidgetStateProperty.all<OutlinedBorder?>(
           const RoundedRectangleBorder(),
         ),
       ),
