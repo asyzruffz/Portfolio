@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/content_data.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
 import 'package:portfolio/constants/tag.dart';
@@ -21,14 +22,8 @@ class BlogSection extends StatelessWidget {
               child: SectionTitle(first: 'Latest ', second: 'News'),
             ),
             const SizedBox(height: Ruler.fullX),
-            ..._spacingBlogContents(const <Widget>[
-              BlogCard(
-                title: Tag.blogTitle1,
-                date: Tag.blogDate1,
-                summary: Tag.blogSummary1,
-                image: Tag.blogImage,
-              ),
-            ]),
+            ..._spacingBlogContents(
+                ContentData.blogs.map((blog) => BlogCard(data: blog)).toList()),
           ],
         ),
       ),
@@ -51,17 +46,11 @@ class BlogSection extends StatelessWidget {
 }
 
 class BlogCard extends StatelessWidget {
-  final String title;
-  final String date;
-  final String summary;
-  final String? image;
+  final BlogData data;
 
   const BlogCard({
     super.key,
-    required this.title,
-    required this.date,
-    required this.summary,
-    this.image,
+    required this.data,
   });
 
   @override
@@ -74,9 +63,9 @@ class BlogCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          image != null
+          data.image != null
               ? Image.asset(
-                  image!,
+                  data.image!,
                   width: 300.0,
                   alignment: Alignment.centerLeft,
                 )
@@ -87,10 +76,10 @@ class BlogCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(title, style: const TextStyle(fontSize: 20)),
+                  Text(data.title, style: const TextStyle(fontSize: 20)),
                   const SizedBox(height: Ruler.miniX),
                   Text(
-                    'Posted on $date',
+                    'Posted on ${data.date}',
                     style: const TextStyle(
                       fontSize: 14,
                       color: Palette.secondary,
@@ -99,7 +88,7 @@ class BlogCard extends StatelessWidget {
                   const SizedBox(height: Ruler.halfX),
                   Expanded(
                     child: Text(
-                      summary,
+                      data.summary,
                       maxLines: 7,
                       overflow: TextOverflow.fade,
                       style: const TextStyle(

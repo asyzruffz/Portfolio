@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/content_data.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
 import 'package:portfolio/constants/tag.dart';
@@ -35,53 +36,6 @@ class ResumeSection extends StatelessWidget {
 }
 
 class ResumeDetails extends StatelessWidget {
-  final List<Widget> experienceCard = const [
-    ResumeCardContent(
-      timePeriod: Tag.resumeExpTime1,
-      title: Tag.resumeExpRole1,
-      description: Tag.resumeExpDesc1,
-    ),
-    ResumeCardContent(
-      timePeriod: Tag.resumeExpTime2,
-      title: Tag.resumeExpRole2,
-      description: Tag.resumeExpDesc2,
-    ),
-    ResumeCardContent(
-      timePeriod: Tag.resumeExpTime3,
-      title: Tag.resumeExpRole3,
-      description: Tag.resumeExpDesc3,
-    ),
-  ];
-
-  final List<Widget> educationCard = const [
-    ResumeCardContent(
-      timePeriod: Tag.resumeEduTime1,
-      title: Tag.resumeEduLevel1,
-      description: Tag.resumeEduDesc1,
-    ),
-    ResumeCardContent(
-      timePeriod: Tag.resumeEduTime2,
-      title: Tag.resumeEduLevel2,
-      description: Tag.resumeEduDesc2,
-    ),
-    ResumeCardContent(
-      timePeriod: Tag.resumeEduTime3,
-      title: Tag.resumeEduLevel3,
-      description: Tag.resumeEduDesc3,
-    ),
-  ];
-
-  final List<Widget> languageCard = const [
-    ResumeCardAttribute(
-      label: Tag.resumeLanguage1,
-      value: Tag.resumeLangScore1,
-    ),
-    ResumeCardAttribute(
-      label: Tag.resumeLanguage2,
-      value: Tag.resumeLangScore2,
-    ),
-  ];
-
   const ResumeDetails({
     super.key,
   });
@@ -89,13 +43,10 @@ class ResumeDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> skillCard = [];
-    for (int i = 0; i < Tag.resumeStats.length; i++) {
-      skillCard.add(ResumeAttributeCategory(name: Tag.resumeStats[i].category));
-      for (int j = 0; j < Tag.resumeStats[i].skills.length; j++) {
-        skillCard.add(ResumeCardAttribute(
-          label: Tag.resumeStats[i].skills[j].label,
-          value: Tag.resumeStats[i].skills[j].value,
-        ));
+    for (SkillCategory category in ContentData.resumeStats) {
+      skillCard.add(ResumeAttributeCategory(name: category.name));
+      for (SkillData skill in category.skills) {
+        skillCard.add(ResumeCardAttribute(data: skill));
       }
     }
 
@@ -107,7 +58,9 @@ class ResumeDetails extends StatelessWidget {
             child: ResumeCard(
               title: Tag.labelExperiences,
               divider: const Divider(color: Palette.secondary),
-              children: experienceCard,
+              children: ContentData.experiences
+                  .map<Widget>((data) => ResumeCardContent(data: data))
+                  .toList(),
             ),
           ),
           const SizedBox(width: Ruler.fullX),
@@ -118,12 +71,16 @@ class ResumeDetails extends StatelessWidget {
                 ResumeCard(
                   title: Tag.labelEducation,
                   divider: const Divider(color: Palette.secondary),
-                  children: educationCard,
+                  children: ContentData.educations
+                      .map<Widget>((data) => ResumeCardContent(data: data))
+                      .toList(),
                 ),
                 const SizedBox(height: Ruler.fullX),
                 ResumeCard(
                   title: Tag.labelLanguages,
-                  children: languageCard,
+                  children: ContentData.resumeLanguages
+                      .map<Widget>((lang) => ResumeCardAttribute(data: lang))
+                      .toList(),
                 ),
               ],
             ),
@@ -143,13 +100,17 @@ class ResumeDetails extends StatelessWidget {
           ResumeCard(
             title: Tag.labelExperiences,
             divider: const Divider(color: Palette.secondary),
-            children: experienceCard,
+            children: ContentData.experiences
+                .map<Widget>((data) => ResumeCardContent(data: data))
+                .toList(),
           ),
           const SizedBox(height: Ruler.fullX),
           ResumeCard(
             title: Tag.labelEducation,
             divider: const Divider(color: Palette.secondary),
-            children: educationCard,
+            children: ContentData.educations
+                .map<Widget>((data) => ResumeCardContent(data: data))
+                .toList(),
           ),
           const SizedBox(height: Ruler.fullX),
           ResumeCard(
@@ -159,7 +120,9 @@ class ResumeDetails extends StatelessWidget {
           const SizedBox(height: Ruler.fullX),
           ResumeCard(
             title: Tag.labelLanguages,
-            children: languageCard,
+            children: ContentData.resumeLanguages
+                .map<Widget>((lang) => ResumeCardAttribute(data: lang))
+                .toList(),
           ),
         ],
       ),
@@ -250,15 +213,11 @@ class ResumeCard extends StatelessWidget {
 }
 
 class ResumeCardContent extends StatelessWidget {
-  final String timePeriod;
-  final String title;
-  final String description;
+  final ResumeData data;
 
   const ResumeCardContent({
     super.key,
-    required this.timePeriod,
-    required this.title,
-    required this.description,
+    required this.data,
   });
 
   @override
@@ -267,7 +226,7 @@ class ResumeCardContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          timePeriod,
+          data.time,
           style: const TextStyle(
             height: 1,
             fontSize: 24,
@@ -276,14 +235,14 @@ class ResumeCardContent extends StatelessWidget {
         ),
         const SizedBox(height: Ruler.miniX),
         Text(
-          title,
+          data.title,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(height: Ruler.miniX),
         Text(
-          description,
+          data.description,
           style: const TextStyle(color: Palette.secondary),
         ),
       ],
@@ -292,13 +251,11 @@ class ResumeCardContent extends StatelessWidget {
 }
 
 class ResumeCardAttribute extends StatelessWidget {
-  final String label;
-  final double value;
+  final SkillData data;
 
   const ResumeCardAttribute({
     super.key,
-    required this.label,
-    required this.value,
+    required this.data,
   });
 
   @override
@@ -307,12 +264,12 @@ class ResumeCardAttribute extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          label,
+          data.label,
           style: const TextStyle(color: Palette.secondary, fontSize: 14),
         ),
         LinearProgressIndicator(
-          value: value,
-          semanticsLabel: label,
+          value: data.value,
+          semanticsLabel: data.label,
           backgroundColor: Palette.disabled,
         ),
       ],

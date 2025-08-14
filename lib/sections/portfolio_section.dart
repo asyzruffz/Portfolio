@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/content_data.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
-import 'package:portfolio/constants/tag.dart';
 import 'package:portfolio/widgets/content_layout.dart';
 import 'package:portfolio/widgets/section_title.dart';
 
@@ -13,7 +13,7 @@ class PortfolioSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ContentLayout(
+    return ContentLayout(
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: Ruler.doubleX),
         child: Column(
@@ -25,80 +25,9 @@ class PortfolioSection extends StatelessWidget {
             ),
             SizedBox(height: Ruler.fullX),
             ProjectGrid(
-              projects: <Widget>[
-                ProjectCard(
-                  name: 'BiO-X',
-                  image: Tag.projImage1,
-                ),
-                ProjectCard(
-                  name: 'ObserVR 2',
-                  image: Tag.projImage3,
-                ),
-                ProjectCard(
-                  name: 'Claustro Escalade',
-                  image: Tag.projImage4,
-                ),
-                ProjectCard(
-                  name: 'Stomp',
-                  image: Tag.projImage5,
-                ),
-                ProjectCard(
-                  name: 'Fowlcard',
-                  image: Tag.projImage6,
-                ),
-                ProjectCard(
-                  name: 'See You Again',
-                  image: Tag.projImage7,
-                ),
-                ProjectCard(
-                  name: 'Find Out Yourself',
-                  image: Tag.projImage8,
-                ),
-                ProjectCard(
-                  name: 'Oath',
-                  image: Tag.projImage9,
-                ),
-                ProjectCard(
-                  name: 'Trapped in Egypt',
-                  image: Tag.projImage10,
-                ),
-                ProjectCard(
-                  name: 'Tetronihome',
-                  image: Tag.projImage11,
-                ),
-                ProjectCard(
-                  name: 'Where\'s My Channel?!',
-                  image: Tag.projImage12,
-                ),
-                ProjectCard(
-                  name: 'Lost Frequency',
-                  image: Tag.projImage13,
-                ),
-                ProjectCard(
-                  name: 'Hex-a-cute',
-                  image: Tag.projImage14,
-                ),
-                ProjectCard(
-                  name: 'Bicker Fight',
-                  image: Tag.projImage15,
-                ),
-                ProjectCard(
-                  name: 'Eterium 2139',
-                  image: Tag.projImage16,
-                ),
-                ProjectCard(
-                  name: 'Ejen Escape',
-                  image: Tag.projImage17,
-                ),
-                ProjectCard(
-                  name: 'Light\'s ON',
-                  image: Tag.projImage18,
-                ),
-                ProjectCard(
-                  name: 'Procedural Floating Island',
-                  image: Tag.projImage2,
-                ),
-              ],
+              projects: ContentData.projects
+                  .map((project) => ProjectCard(data: project))
+                  .toList(),
             ),
           ],
         ),
@@ -156,13 +85,11 @@ class _ProjectGridState extends State<ProjectGrid> {
 }
 
 class ProjectCard extends StatelessWidget {
-  final String name;
-  final String? image;
+  final ProjectData data;
 
   const ProjectCard({
     super.key,
-    required this.name,
-    this.image,
+    required this.data,
   });
 
   @override
@@ -173,9 +100,9 @@ class ProjectCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          image != null
+          data.image != null
               ? Image.asset(
-                  image!,
+                  data.image!,
                   width: 300.0 + Ruler.fullX + Ruler.halfX,
                   height: 250.0 + Ruler.threeQuarterX,
                   fit: BoxFit.cover,
@@ -192,10 +119,10 @@ class ProjectCard extends StatelessWidget {
                 width: 300.0,
                 child: ListView(
                   children: <Widget>[
-                    Text(name, style: const TextStyle(fontSize: 20)),
+                    Text(data.name, style: const TextStyle(fontSize: 20)),
                     const SizedBox(height: Ruler.miniX),
-                    const Text(
-                      'Description ...',
+                    Text(
+                      data.description,
                       style: TextStyle(
                         fontSize: 14,
                         color: Palette.secondary,
