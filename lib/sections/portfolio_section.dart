@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/constants/content_data.dart';
 import 'package:portfolio/constants/palette.dart';
 import 'package:portfolio/constants/ruler.dart';
+import 'package:portfolio/helper.dart';
 import 'package:portfolio/widgets/content_layout.dart';
 import 'package:portfolio/widgets/section_title.dart';
 
@@ -119,14 +120,39 @@ class ProjectCard extends StatelessWidget {
                 width: 300.0,
                 child: ListView(
                   children: <Widget>[
-                    Text(data.name, style: const TextStyle(fontSize: 20)),
+                    Text(
+                      data.name,
+                      style:
+                          const TextStyle(fontSize: 20, color: Palette.primary),
+                    ),
                     const SizedBox(height: Ruler.miniX),
                     Text(
                       data.description,
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Palette.secondary,
-                      ),
+                      style: TextStyle(fontSize: 14, color: Palette.secondary),
+                    ),
+                    const SizedBox(height: Ruler.miniX),
+                    Wrap(
+                      spacing: Ruler.miniX,
+                      runSpacing: Ruler.miniX,
+                      children: data.links
+                          .map((link) => FilledButton(
+                                onPressed: link.url != null
+                                    ? () => Helper.goUrl(link.url!)
+                                    : () {},
+                                style: FilledButton.styleFrom(
+                                  backgroundColor: link.url != null
+                                      ? Palette.tertiary
+                                      : Palette.primary,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: Ruler.halfX,
+                                    vertical: 0.0,
+                                  ),
+                                ),
+                                child: link.icon != null
+                                    ? Icon(link.icon)
+                                    : Text(link.label ?? ''),
+                              ))
+                          .toList(),
                     ),
                   ],
                 ),

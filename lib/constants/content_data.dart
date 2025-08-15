@@ -1,3 +1,6 @@
+import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class ContentData {
   static const List<ResumeData> experiences = [
     ResumeData(
@@ -85,94 +88,235 @@ class ContentData {
     ProjectData(
       name: 'BiO-X',
       description:
-          'Published mobile strategy game developed while working in Calian Games Sdn Bhd.',
+          'Published mobile strategy game developed while working in Calian Games Sdn Bhd. Command various troops that have been mutated by Genie-X.',
       image: 'images/project_BiO-X.png',
+      links: [
+        ProjectLink('Android'),
+        ProjectLink('Unity'),
+        ProjectLink.icon(FontAwesomeIcons.facebook,
+            url: 'https://www.facebook.com/biox.games'),
+      ],
     ),
     ProjectData(
       name: 'ObserVR 2',
-      description: 'Description ...',
+      description:
+          'A mobile shooting strategy VR game. Use your head movement as a controller to shoot laser beams towards asteroids.',
       image: 'images/project_observr.png',
-    ),
-    ProjectData(
-      name: 'Claustro Escalade',
-      description: 'Description ...',
-      image: 'images/project_claustro.png',
-    ),
-    ProjectData(
-      name: 'Stomp',
-      description: 'Description ...',
-      image: 'images/project_stomp.png',
-    ),
-    ProjectData(
-      name: 'Fowlcard',
-      description: 'Description ...',
-      image: 'images/project_fowlcard.png',
-    ),
-    ProjectData(
-      name: 'See You Again',
-      description: 'Description ...',
-      image: 'images/project_seeyouagain.png',
-    ),
-    ProjectData(
-      name: 'Find Out Yourself',
-      description: 'Description ...',
-      image: 'images/project_findout.png',
-    ),
-    ProjectData(
-      name: 'Oath',
-      description: 'Description ...',
-      image: 'images/project_oath.png',
-    ),
-    ProjectData(
-      name: 'Trapped in Egypt',
-      description: 'Description ...',
-      image: 'images/project_trapped.png',
+      links: [
+        ProjectLink('Android'),
+        ProjectLink('VR'),
+        ProjectLink('Unity'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/ObserVR2'),
+      ],
     ),
     ProjectData(
       name: 'Tetronihome',
-      description: 'Description ...',
+      description:
+          'Game made during a game jam. Using standard Tetris gameplay, construct a structure out of tetronimos around your tenant and build them their dream house!',
       image: 'images/project_tetronihome.png',
+      links: [
+        ProjectLink('Global Game Jam'),
+        ProjectLink('2019'),
+        ProjectLink("Page",
+            url: 'https://globalgamejam.org/2019/games/tetronihome'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Global-Game-Jam-2019'),
+      ],
+    ),
+    ProjectData(
+      name: 'Stomp',
+      description:
+          'Game made during a game jam. Evade from the stomping menace while whittling down the monster\'s health with the missiles around.',
+      image: 'images/project_stomp.png',
+      links: [
+        ProjectLink('Ludum Dare 43'),
+        ProjectLink('2018'),
+        ProjectLink("Page",
+            url: 'https://ldjam.com/events/ludum-dare/43/stomp'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Ludum-Dare-43'),
+      ],
+    ),
+    ProjectData(
+      name: 'Claustro Escalade',
+      description:
+          'Game made during a game jam. You are trapped in an enclosed space. You need to get out of here or your mind could not take it.',
+      image: 'images/project_claustro.png',
+      links: [
+        ProjectLink('Ludum Dare 42'),
+        ProjectLink('2018'),
+        ProjectLink("Page",
+            url: 'https://ldjam.com/events/ludum-dare/42/claustro-escalade'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Ludum-Dare-42'),
+      ],
+    ),
+    ProjectData(
+      name: 'Fowlcard',
+      description:
+          'Game made during a game jam. This game combines the genre for card games and simulation (rearing livestock) games.',
+      image: 'images/project_fowlcard.png',
+      links: [
+        ProjectLink('Ludum Dare 41'),
+        ProjectLink('2018'),
+        ProjectLink("Page",
+            url: 'https://ldjam.com/events/ludum-dare/41/fowlcard'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Ludum-Dare-41'),
+      ],
     ),
     ProjectData(
       name: 'Where\'s My Channel?!',
-      description: 'Description ...',
+      description:
+          'Game made during a game jam. Move the antenna around and look for the correct TV transmission to the correct TV shows!',
       image: 'images/project_wherechannel.png',
+      links: [
+        ProjectLink('Global Game Jam'),
+        ProjectLink('2018'),
+        ProjectLink("Page",
+            url: 'https://globalgamejam.org/2018/games/wheres-my-channel'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Global-Game-Jam-2018'),
+      ],
+    ),
+    ProjectData(
+      name: 'Find Out Yourself',
+      description:
+          'Game made during a game jam. We are running out of power! It is up to you to turn on the power back.',
+      image: 'images/project_findout.png',
+      links: [
+        ProjectLink('Ludum Dare 39'),
+        ProjectLink('2017'),
+        ProjectLink("Page",
+            url: 'https://ldjam.com/events/ludum-dare/39/find-out-yourself'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Ludum-Dare-39'),
+      ],
+    ),
+    ProjectData(
+      name: 'See You Again',
+      description:
+          'Game made during a game jam. When you interact with the first person, try to find similar person again.',
+      image: 'images/project_seeyouagain.png',
+      links: [
+        ProjectLink('Ludum Dare 38'),
+        ProjectLink('2017'),
+        ProjectLink("Page",
+            url: 'https://ldjam.com/events/ludum-dare/38/see-you-again'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Ludum-Dare-38'),
+      ],
     ),
     ProjectData(
       name: 'Lost Frequency',
-      description: 'Description ...',
+      description:
+          'Game made during a game jam. Find the right frequency and keep the ghosts away to stay sane.',
       image: 'images/project_lostfrequency.jpg',
+      links: [
+        ProjectLink('Global Game Jam'),
+        ProjectLink('2017'),
+        ProjectLink("Page",
+            url: 'https://globalgamejam.org/2017/games/lost-frequency-0'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Global-Game-Jam-2017'),
+      ],
+    ),
+    ProjectData(
+      name: 'Oath',
+      description:
+          'Game made during a game jam. The man must fight all the monsters in the space inside his mind in order to find his wife.',
+      image: 'images/project_oath.png',
+      links: [
+        ProjectLink('Ludum Dare 37'),
+        ProjectLink('2016'),
+        ProjectLink("Page",
+            url:
+                'https://web.archive.org/web/20210117104058/http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=55508'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Ludum-Dare-37'),
+      ],
+    ),
+    ProjectData(
+      name: 'Trapped in Egypt',
+      description:
+          'Game made during a game jam. Horus and Seth are busy fighting that they didn\'t realise they\'re in an area covered by traps.',
+      image: 'images/project_trapped.png',
+      links: [
+        ProjectLink('Ludum Dare 36'),
+        ProjectLink('2016'),
+        ProjectLink("Page",
+            url:
+                'https://web.archive.org/web/20210423162645/http://ludumdare.com/compo/ludum-dare-36/?action=preview&uid=55508'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Ludum-Dare-36'),
+      ],
     ),
     ProjectData(
       name: 'Hex-a-cute',
-      description: 'Description ...',
+      description:
+          'Game made during a game jam. 2-player tile placement game. Defeat your opponent by summoning cute elemental monsters and attacking their base.',
       image: 'images/project_hexacute.png',
-    ),
-    ProjectData(
-      name: 'Bicker Fight',
-      description: 'Description ...',
-      image: 'images/project_bickerfight.png',
-    ),
-    ProjectData(
-      name: 'Eterium 2139',
-      description: 'Description ...',
-      image: 'images/project_eterium.png',
-    ),
-    ProjectData(
-      name: 'Ejen Escape',
-      description: 'Description ...',
-      image: 'images/project_ejenescape.png',
+      links: [
+        ProjectLink('Global Game Jam'),
+        ProjectLink('2016'),
+        ProjectLink("Page",
+            url: 'https://globalgamejam.org/2016/games/hex-cute'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/Global-Game-Jam-2016'),
+      ],
     ),
     ProjectData(
       name: 'Light\'s ON',
-      description: 'Description ...',
+      description: 'Game made during a game jam. ',
       image: 'images/project_lightson.png',
+      links: [
+        ProjectLink('SEA Game Jam'),
+        ProjectLink('Level Up KL'),
+        ProjectLink('2016'),
+      ],
+    ),
+    ProjectData(
+      name: 'Ejen Escape',
+      description: 'Game made during a game jam.',
+      image: 'images/project_ejenescape.png',
+      links: [
+        ProjectLink('SEA Game Jam'),
+        ProjectLink('Level Up KL'),
+        ProjectLink('2017'),
+      ],
+    ),
+    ProjectData(
+      name: 'Eterium 2139',
+      description: 'Game made during a game jam.',
+      image: 'images/project_eterium.png',
+      links: [
+        ProjectLink('SEA Game Jam'),
+        ProjectLink('Level Up KL'),
+        ProjectLink('2018'),
+      ],
+    ),
+    ProjectData(
+      name: 'Bicker Fight',
+      description: 'Game made during a game jam.',
+      image: 'images/project_bickerfight.png',
+      links: [
+        ProjectLink('SEA Game Jam'),
+        ProjectLink('Level Up KL'),
+        ProjectLink('2019'),
+      ],
     ),
     ProjectData(
       name: 'Procedural Floating Island',
       description:
           'Final year project for the bachelor degree developing a procedural 3D terrain generator for floating islands.',
       image: 'images/project_procedural.png',
+      links: [
+        ProjectLink('C#'),
+        ProjectLink('Unity'),
+        ProjectLink.icon(FontAwesomeIcons.github,
+            url: 'https://github.com/asyzruffz/ProceduralFloatingIsland'),
+      ],
     ),
   ];
 
@@ -180,6 +324,7 @@ class ContentData {
     BlogData(
       title: 'Hello, world!',
       date: '10/02/2024',
+      image: 'images/blog_banner.jpg',
       summary:
           'Welcome to my personal website! This is my first blog post, and I\'m very excited to share it with you.\nI\'ve always wanted to have my own website, where I can showcase my skills, projects, and interests. I think having a personal website is a great way to express yourself, connect with others, and learn new things.\nIt took me a while to complete this website, but I\'m very proud of the result. I learned a lot along the way, happy to experiment with the usage of dart and Flutter. There are still a lot of quirks and issues that I need to handle.\nI hope you enjoy browsing my website, and feel free to leave me a comment or contact me. I\'d love to hear from you!\nThank you for reading, and stay tuned for more updates!',
     )
@@ -216,14 +361,23 @@ class ProjectData {
   final String name;
   final String description;
   final String? image;
-  final String? link;
+  final List<ProjectLink> links;
 
   const ProjectData({
     required this.name,
     required this.description,
     this.image,
-    this.link,
+    this.links = const [],
   });
+}
+
+class ProjectLink {
+  final String? label;
+  final IconData? icon;
+  final String? url;
+
+  const ProjectLink(this.label, {this.url}) : icon = null;
+  const ProjectLink.icon(this.icon, {this.url}) : label = null;
 }
 
 class BlogData {
