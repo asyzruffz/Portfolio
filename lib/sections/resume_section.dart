@@ -146,22 +146,22 @@ class ResumeSummary extends StatelessWidget {
             ResumeStats(
               icon: Icons.lock_clock,
               label: 'Hours Worked',
-              amount: '500',
+              amount: '3k+',
             ),
             ResumeStats(
               icon: Icons.layers,
               label: 'Project Finished',
-              amount: '50K',
+              amount: '20+',
             ),
             ResumeStats(
               icon: Icons.face,
               label: 'Happy Clients',
-              amount: '200K',
+              amount: '100',
             ),
             ResumeStats(
               icon: Icons.coffee,
               label: 'Coffee Drinked',
-              amount: '2k',
+              amount: '100+',
             ),
           ],
         ),
