@@ -14,7 +14,10 @@ class PaddedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(Ruler.threeQuarterX),
-      decoration: BoxDecoration(border: Border.all(color: Palette.secondary)),
+      decoration: BoxDecoration(
+        color: Palette.background,
+        border: Border.all(color: Palette.secondary),
+      ),
       child: child,
     );
   }

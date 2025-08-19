@@ -55,6 +55,7 @@ class AboutContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Ruler.doubleX),
       decoration: const BoxDecoration(
+        color: Palette.background,
         border: Border(
           bottom: BorderSide(color: Palette.secondary),
           left: BorderSide(color: Palette.secondary, width: 0.5),

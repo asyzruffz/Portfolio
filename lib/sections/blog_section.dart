@@ -58,6 +58,7 @@ class BlogCard extends StatelessWidget {
     return Container(
       height: 300.0,
       decoration: BoxDecoration(
+        color: Palette.background,
         border: Border.all(color: Palette.secondary),
       ),
       child: Row(

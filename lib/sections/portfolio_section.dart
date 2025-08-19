@@ -97,6 +97,7 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: Palette.background,
         border: Border.all(color: Palette.secondary),
       ),
       child: Column(

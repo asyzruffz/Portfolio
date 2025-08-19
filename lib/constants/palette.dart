@@ -7,6 +7,7 @@ class Palette {
   static const Color tertiary = Color(0xFF50A5DA);
 
   static const Color background = Colors.white;
+  static const Color surface = Color(0xFFDBDFFF);
   static const Color dark = Color(0xFF343a40);
   static const Color onPrimary = Colors.white;
   static const Color onSurface = Colors.black;
@@ -19,5 +20,6 @@ class Palette {
     tertiary: tertiary,
     onPrimary: onPrimary,
     onSurface: onSurface,
+    surface: surface,
   );
 }
