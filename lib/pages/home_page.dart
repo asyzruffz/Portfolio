@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   void _navigateTo(int index) {
     if (index == 0) {
       _controller.animateTo(
-        0,
+        0.0,
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOut,
       );

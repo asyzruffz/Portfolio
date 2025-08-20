@@ -24,7 +24,7 @@ class _SplitTabBarState extends State<SplitTabBar> {
 
   @override
   Widget build(BuildContext context) {
-    int halfTabCount = (widget.tabLabels.length / 2) as int;
+    int halfTabCount = widget.tabLabels.length ~/ 2;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
