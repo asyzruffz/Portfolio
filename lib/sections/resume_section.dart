@@ -137,11 +137,12 @@ class ResumeSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: Ruler.doubleX),
-      height: 225,
       color: Palette.dark,
       child: const ContentLayout(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Wrap(
+          alignment: WrapAlignment.spaceEvenly,
+          spacing: Ruler.fullX,
+          runSpacing: Ruler.fullX,
           children: [
             ResumeStats(
               icon: Icons.lock_clock,
@@ -312,12 +313,15 @@ class ResumeStats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(icon, size: Ruler.iconBig, color: Palette.onPrimary),
-        const SizedBox(width: Ruler.miniX),
-        const VerticalDivider(color: Palette.onPrimary),
-        const SizedBox(width: Ruler.miniX),
+        const SizedBox(
+          height: 100.0,
+          width: Ruler.fullX,
+          child: VerticalDivider(color: Palette.onPrimary),
+        ),
         Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
