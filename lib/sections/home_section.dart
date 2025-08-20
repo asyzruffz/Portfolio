@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/palette.dart';
+import 'package:portfolio/constants/ruler.dart';
 import 'package:portfolio/sections/hero_section.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
 
@@ -17,7 +19,12 @@ class HomeSection extends StatelessWidget {
     double height = screenY - padding.top - padding.bottom;
 
     return SliverAppBar.large(
-      floating: false,
+      backgroundColor: Palette.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadiusGeometry.vertical(
+          bottom: Radius.circular(Ruler.halfX),
+        ),
+      ),
       expandedHeight: height,
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.pin,

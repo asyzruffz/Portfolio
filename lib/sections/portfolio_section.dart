@@ -14,23 +14,26 @@ class PortfolioSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ContentLayout(
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: Ruler.doubleX),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: SectionTitle(first: 'My ', second: 'Portfolio'),
-            ),
-            SizedBox(height: Ruler.fullX),
-            ProjectGrid(
-              projects: ContentData.projects
-                  .map((project) => ProjectCard(data: project))
-                  .toList(),
-            ),
-          ],
+    return ColoredBox(
+      color: Palette.surface,
+      child: ContentLayout(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: Ruler.doubleX),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: SectionTitle(first: 'My ', second: 'Portfolio'),
+              ),
+              SizedBox(height: Ruler.fullX),
+              ProjectGrid(
+                projects: ContentData.projects
+                    .map((project) => ProjectCard(data: project))
+                    .toList(),
+              ),
+            ],
+          ),
         ),
       ),
     );

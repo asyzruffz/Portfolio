@@ -20,6 +20,5 @@ class Palette {
     tertiary: tertiary,
     onPrimary: onPrimary,
     onSurface: onSurface,
-    surface: surface,
   );
 }

@@ -11,7 +11,9 @@ class BlogSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ContentLayout(
+    return ColoredBox(
+      color: Palette.surface,
+      child: ContentLayout(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: Ruler.doubleX),
         child: Column(
@@ -22,9 +24,11 @@ class BlogSection extends StatelessWidget {
               child: SectionTitle(first: 'Latest ', second: 'News'),
             ),
             const SizedBox(height: Ruler.fullX),
-            ..._spacingBlogContents(
-                ContentData.blogs.map((blog) => BlogCard(data: blog)).toList()),
+              ..._spacingBlogContents(ContentData.blogs
+                  .map((blog) => BlogCard(data: blog))
+                  .toList()),
           ],
+          ),
         ),
       ),
     );

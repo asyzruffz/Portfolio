@@ -36,7 +36,11 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(0),
-      shape: const RoundedRectangleBorder(),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadiusGeometry.vertical(
+          bottom: Radius.circular(Ruler.halfX),
+        ),
+      ),
       color: Palette.background.withAlpha(230),
       child: SizedBox(
         width: double.infinity,

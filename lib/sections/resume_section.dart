@@ -14,22 +14,25 @@ class ResumeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: Ruler.doubleX),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          ContentLayout(
-            child: Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: SectionTitle(first: 'My ', second: 'Resume'),
+    return const ColoredBox(
+      color: Palette.surface,
+      child: Padding(
+        padding: EdgeInsets.only(top: Ruler.doubleX),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ContentLayout(
+              child: Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: SectionTitle(first: 'My ', second: 'Resume'),
+              ),
             ),
-          ),
-          SizedBox(height: Ruler.fullX),
-          ContentLayout(child: ResumeDetails()),
-          SizedBox(height: Ruler.doubleX),
-          ResumeSummary(),
-        ],
+            SizedBox(height: Ruler.fullX),
+            ContentLayout(child: ResumeDetails()),
+            SizedBox(height: Ruler.doubleX),
+            ResumeSummary(),
+          ],
+        ),
       ),
     );
   }

@@ -31,7 +31,6 @@ class _SplitTabBarState extends State<SplitTabBar> {
       children: <Widget>[
         for (int i = 0; i < halfTabCount; i++)
           _SplitTab(
-            index: i,
             label: widget.tabLabels[i],
             onPressed: () => _select(i),
             selected: selectedIndex == i,
@@ -40,7 +39,6 @@ class _SplitTabBarState extends State<SplitTabBar> {
         for (int i = halfTabCount; i < widget.tabLabels.length; i++)
           _SplitTab(
             key: ValueKey(i),
-            index: i,
             label: widget.tabLabels[i],
             onPressed: () => _select(i),
             selected: selectedIndex == i,
@@ -58,14 +56,12 @@ class _SplitTabBarState extends State<SplitTabBar> {
 }
 
 class _SplitTab extends StatelessWidget {
-  final int index;
   final String label;
   final bool selected;
   final VoidCallback? onPressed;
 
   const _SplitTab({
     super.key,
-    required this.index,
     required this.label,
     this.selected = false,
     this.onPressed,
